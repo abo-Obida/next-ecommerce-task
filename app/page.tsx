@@ -1,11 +1,20 @@
-import React from 'react'
+"use client";
 
-const page = () => {
+import { useEffect, useState } from "react";
+import { Product } from "./src/types/product";
+import products from "./src/data/products.json";
+import ProductGrid from "./src/components/ProductGrid";
+import Header from "./src/components/Header";
+import Footer from "./src/components/Footer";
+
+export default function Home() {
   return (
-    <div>
-      <h1 className='text-amber-200'>hi there</h1>
-    </div>
-  )
-}
 
-export default page
+    <main className="bg-gray-50 min-h-screen">
+      <Header
+      />
+      <ProductGrid products={products as Product[]} />
+      <Footer />
+    </main>
+  );
+}
